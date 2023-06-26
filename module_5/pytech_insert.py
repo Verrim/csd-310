@@ -1,16 +1,5 @@
-
-""" 
-    Title: pytech_insert.py
-    Author: Professor Krasso
-    Date: 10 July 2020
-    Description: Test program for inserting new documents 
-                 into the students collection 
-"""
-
-""" import statements """
 from pymongo import MongoClient
 
-# MongoDB connection string 
 url = "mongodb+srv://admin:admin@cluster0.rsnru.mongodb.net/pytech?retryWrites=true&w=majority"
 
 # connect to the MongoDB cluster 
