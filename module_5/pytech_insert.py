@@ -95,12 +95,12 @@ students = db.students
 
 print("\n  -- INSERT STATEMENTS --")
 shane_student_id = students.insert_one(shane).inserted_id
-print("  Inserted student record Shane Diyanni into the students collection with document_id " + str(thorin_student_id))
+print("  Inserted student record Shane Diyanni into the students collection with document_id " + str(shane_student_id))
 
 lacey_student_id = students.insert_one(lacey).inserted_id
-print("  Inserted student record Lacey Deihl into the students collection with document_id " + str(bilbo_student_id))
+print("  Inserted student record Lacey Deihl into the students collection with document_id " + str(lacey_student_id))
 
 jake_student_id = students.insert_one(jake).inserted_id
-print("  Inserted student record Jake Mathews into the students collection with document_id " + str(frodo_student_id))
+print("  Inserted student record Jake Mathews into the students collection with document_id " + str(jake_student_id))
 
 input("\n\n  End of program, press any key to exit... ")
