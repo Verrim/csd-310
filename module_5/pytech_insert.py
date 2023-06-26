@@ -1,19 +1,15 @@
 from pymongo import MongoClient
 
-url = "mongodb+srv://admin:admin@cluster0.rsnru.mongodb.net/pytech?retryWrites=true&w=majority"
+url = "mongodb+srv://admin:admin@cluster0.12tpk99.mongodb.net/?retryWrites=true&w=majority"
 
-# connect to the MongoDB cluster 
 client = MongoClient(url)
 
-# connect pytech database
 db = client.pytech
-
-""" three student documents"""
-# Thorin Oakenshield's data document 
-thorin = {
+ 
+shane = {
     "student_id": "1007",
-    "first_name": "Thorin",
-    "last_name": "Oakenshield",
+    "first_name": "Shane",
+    "last_name": "Diyanni",
     "enrollments": [
         {
             "term": "Session 2",
@@ -22,15 +18,15 @@ thorin = {
             "end_date": "September 14, 2020",
             "courses": [
                 {
-                    "course_id": "CSD310",
-                    "description": "Database Development and Use",
-                    "instructor": "Professor Krasso",
+                    "course_id": "12345",
+                    "description": "Data/Database Security",
+                    "instructor": "Professor Chelsie Thompson",
                     "grade": "A+"
                 },
                 {
-                    "course_id": "CSD320",
-                    "description": "Programming with Java",
-                    "instructor": "Professor Krasso",
+                    "course_id": "12346",
+                    "description": "Cooking",
+                    "instructor": "Professor Dylan",
                     "grade": "A+"
                 }
             ]
@@ -39,11 +35,10 @@ thorin = {
 
 }
 
-# Bilbo Baggins data document 
-bilbo = {
+lacey = {
     "student_id": "1008",
-    "first_name": "Bilbo",
-    "last_name": "Baggins",
+    "first_name": "Lacey",
+    "last_name": "Deihl",
     "enrollments": [
         {
             "term": "Session 2",
@@ -52,15 +47,15 @@ bilbo = {
             "end_date": "September 14, 2020",
             "courses": [
                 {
-                    "course_id": "CSD310",
-                    "description": "Database Development and Use",
-                    "instructor": "Professor Krasso",
+                    "course_id": "12345",
+                    "description": "Data/Databse Security",
+                    "instructor": "Professor Chelsie Thompson",
                     "grade": "B+"
                 },
                 {
-                    "course_id": "CSD320",
-                    "description": "Programming with Java",
-                    "instructor": "Professor Krasso",
+                    "course_id": "12346",
+                    "description": "Cooking",
+                    "instructor": "Professor Dylan",
                     "grade": "A-"
                 }
             ]
@@ -68,11 +63,10 @@ bilbo = {
     ]
 }
 
-# Frodo Baggins data document
-frodo = {
+jake = {
     "student_id": "1009",
-    "first_name": "Frodo",
-    "last_name": "Baggins",
+    "first_name": "Jake",
+    "last_name": "Mathews",
     "enrollments": [
         {
             "term": "Session 2",
@@ -81,15 +75,15 @@ frodo = {
             "end_date": "September 14, 2020",
             "courses": [
                 {
-                    "course_id": "CSD310",
-                    "description": "Database Development and Use",
-                    "instructor": "Professor Krasso",
+                    "course_id": "12345",
+                    "description": "Data/Database Security",
+                    "instructor": "Professor Chelsie Thompson",
                     "grade": "C"
                 },
                 {
-                    "course_id": "CSD 320",
-                    "description": "Programming with Java",
-                    "instructor": "Professor Krasso",
+                    "course_id": "12346",
+                    "description": "Cooking",
+                    "instructor": "Professor Dylan",
                     "grade": "B"
                 }
             ]
@@ -97,18 +91,16 @@ frodo = {
     ]
 }
 
-# get the students collection 
 students = db.students
 
-# insert statements with output 
 print("\n  -- INSERT STATEMENTS --")
-thorin_student_id = students.insert_one(thorin).inserted_id
-print("  Inserted student record Thorin Oakenshield into the students collection with document_id " + str(thorin_student_id))
+shane_student_id = students.insert_one(shane).inserted_id
+print("  Inserted student record Shane Diyanni into the students collection with document_id " + str(thorin_student_id))
 
-bilbo_student_id = students.insert_one(bilbo).inserted_id
-print("  Inserted student record Bilbo Baggins into the students collection with document_id " + str(bilbo_student_id))
+lacey_student_id = students.insert_one(lacey).inserted_id
+print("  Inserted student record Lacey Deihl into the students collection with document_id " + str(bilbo_student_id))
 
-frodo_student_id = students.insert_one(frodo).inserted_id
-print("  Inserted student record Frodo Baggins into the students collection with document_id " + str(frodo_student_id))
+jake_student_id = students.insert_one(jake).inserted_id
+print("  Inserted student record Jake Mathews into the students collection with document_id " + str(frodo_student_id))
 
 input("\n\n  End of program, press any key to exit... ")
