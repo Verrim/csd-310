@@ -1,11 +1,16 @@
+# Import
 from pymongo import MongoClient
 
+# MongoDB connection string
 url = "mongodb+srv://admin:admin@cluster0.12tpk99.mongodb.net/?retryWrites=true&w=majority"
 
+# connect MongoDB cluster
 client = MongoClient(url)
 
+# connect pytech database
 db = client.pytech
- 
+
+# student documents
 shane = {
     "student_id": "1007",
     "first_name": "Shane",
@@ -91,8 +96,10 @@ jake = {
     ]
 }
 
+# students collection
 students = db.students
 
+# insert statements and output
 print("\n  -- INSERT STATEMENTS --")
 shane_student_id = students.insert_one(shane).inserted_id
 print("  Inserted student record Shane Diyanni into the students collection with document_id " + str(shane_student_id))
@@ -103,4 +110,5 @@ print("  Inserted student record Lacey Deihl into the students collection with d
 jake_student_id = students.insert_one(jake).inserted_id
 print("  Inserted student record Jake Mathews into the students collection with document_id " + str(jake_student_id))
 
+# exit
 input("\n\n  End of program, press any key to exit... ")
