@@ -12,7 +12,7 @@ client = MongoClient(url)
 # connect pytech database
 db = client.pytech
 
-# displays
+# output
 print("\n -- Pytech COllection List --")
 print(db.list_collection_names())
 
